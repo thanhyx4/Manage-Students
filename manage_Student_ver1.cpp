@@ -1,4 +1,8 @@
-// use static array
+//I. use static array
+//update: I/O file
+//update: exception
+
+
 
 #include<iostream>
 #include<cstring>
@@ -19,7 +23,7 @@ void menu(){
    cout << "3. In danh sach "<<endl;
    cout << "Bam phim 1-3 de chon, phim bat ki # de end"<< endl;
 }
-// Character String
+//1. Character String
 void swap_Student1(char name1[30], char name2[30]){
    char temp_Name[30];
    strcpy(temp_Name,name1);
@@ -33,11 +37,13 @@ void add_Student1(){
    fflush(stdin);
    for (int i = 0; i < number_Students; i++)    
    {
-     cin.getline(name[i], 30);     // over 30 character will drop infinitive loop -> need fix
+      
+     cin.getline(name[i], 30);     // over 30 character will end -> drop infinitive loop while -> need fix
+      
    }
 }
 
-void standardized_Name(){
+void standardized_Name1(){
    for(int i=0; i< number_Students; i++){
       int length_before = strlen(name[i]);
       int count_WrongChar =0;
@@ -102,7 +108,7 @@ void VN_Sort_List1(){
 
                if(strcmp(name[i], name[j])>0 ){
                   swap_Student1(name[i], name[j]);
-                  swap_Student1(lastName[i], lastName[j]);
+               //   swap_Student1(lastName[i], lastName[j]);
                }
             }else{
                swap_Student1(name[i], name[j]);
@@ -122,7 +128,7 @@ void print_List1(){
    }
 }
 
-// String Class
+//2. String Class
   
 int main(){
    int kT=0;
@@ -134,7 +140,7 @@ int main(){
       {
       case 1:
          add_Student1();
-         standardized_Name();
+         standardized_Name1();
          break;
       case 2:
          int kT1;
